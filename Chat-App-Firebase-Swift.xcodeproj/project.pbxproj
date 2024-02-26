@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB70AFFD2B8D4DC50089E7F0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70AFFC2B8D4DC50089E7F0 /* ImagePicker.swift */; };
 		F35AED0B2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AED0A2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift */; };
 		F35AED0D2B8B74AB00B42BFF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AED0C2B8B74AB00B42BFF /* LoginView.swift */; };
 		F35AED0F2B8B74AC00B42BFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F35AED0E2B8B74AC00B42BFF /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB70AFFC2B8D4DC50089E7F0 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePicker.swift; path = ../../../Downloads/LBTASwiftUIFirebaseChat/LBTASwiftUIFirebaseChat/ImagePicker.swift; sourceTree = "<group>"; };
 		F35AED072B8B74AB00B42BFF /* Chat-App-Firebase-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat-App-Firebase-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35AED0A2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_Firebase_SwiftApp.swift; sourceTree = "<group>"; };
 		F35AED0C2B8B74AB00B42BFF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				F35AED0A2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift */,
 				F35AED0C2B8B74AB00B42BFF /* LoginView.swift */,
+				BB70AFFC2B8D4DC50089E7F0 /* ImagePicker.swift */,
 				F38A6D7A2B8CC73900986E7D /* GoogleService-Info.plist */,
 				F35AED0E2B8B74AC00B42BFF /* Assets.xcassets */,
 				F35AED102B8B74AC00B42BFF /* Preview Content */,
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB70AFFD2B8D4DC50089E7F0 /* ImagePicker.swift in Sources */,
 				F35AED0D2B8B74AB00B42BFF /* LoginView.swift in Sources */,
 				F35AED0B2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift in Sources */,
 			);
