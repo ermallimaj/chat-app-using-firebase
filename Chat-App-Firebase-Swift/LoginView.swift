@@ -6,12 +6,10 @@
 //
 // Gentrit test commit
 import SwiftUI
-import Firebase
-import FirebaseStorage
-import FirebaseFirestore
-
 
 struct LoginView: View {
+
+    let loginSuccess: () -> ()
     
     @State private var isLoginMode = false
 
@@ -128,12 +126,19 @@ struct LoginView: View {
                                print("Successfully logged in as user: \(result?.user.uid ?? "")")
                                
                                self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
+                           
+                               self.loginSuccess()
                            }
                        }
                        
                        @State var loginStatusMessage = ""
                        
                        private func createNewAccount() {
+                           if self.image == nil {
+                               self.loginStatusMessage = "You must select an image"
+                               return
+                           }
+                           
                            FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, err in
                                if let err = err {
                                    print("Failed to create user:", err)
@@ -186,12 +191,16 @@ struct LoginView: View {
                 }
                 
                 print("Success")
+                self.loginSuccess()
             }
     }
                    }
 
-struct Previews_LoginView_Previews: PreviewProvider {
+struct Previews_LoginView_Previews1: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(loginSuccess: {
+            
+        })
+        .preferredColorScheme(.light)
     }
 }

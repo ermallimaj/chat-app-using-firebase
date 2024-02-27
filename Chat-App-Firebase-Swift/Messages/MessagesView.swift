@@ -8,10 +8,6 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct ChatUser {
-    let uid, firstname, lastname, email, profileImageUrl: String
-}
-
 struct MessagesView: View {
     
     @State var showLogOLut = false
@@ -80,10 +76,16 @@ struct MessagesView: View {
         .actionSheet(isPresented: $showLogOLut) {
             .init(title: Text("Settings"), message: Text("What's your decision?"), buttons: [
                 .destructive(Text("Sign Out"), action: {
-                    print("user decided to sign out")
+                    vm.signOut()
                 }),
                     .cancel()
             ])
+        }
+        .fullScreenCover(isPresented: $vm.isUserLoggedOut, onDismiss: nil) {
+            LoginView(loginSuccess:{
+                self.vm.isUserLoggedOut = false
+                self.vm.fetchCurrentUser()
+            })
         }
     }
     
@@ -140,8 +142,9 @@ struct MessagesView: View {
     }
 }
 
-struct MessagesView_Previews: PreviewProvider {
+struct MessagesView_Previews1: PreviewProvider {
     static var previews: some View {
         MessagesView()
+            .preferredColorScheme(.light)
     }
 }

@@ -19,6 +19,7 @@
 		F35AED1C2B8B74AC00B42BFF /* Chat_App_Firebase_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AED1B2B8B74AC00B42BFF /* Chat_App_Firebase_SwiftTests.swift */; };
 		F35AED262B8B74AC00B42BFF /* Chat_App_Firebase_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AED252B8B74AC00B42BFF /* Chat_App_Firebase_SwiftUITests.swift */; };
 		F35AED282B8B74AC00B42BFF /* Chat_App_Firebase_SwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AED272B8B74AC00B42BFF /* Chat_App_Firebase_SwiftUITestsLaunchTests.swift */; };
+		F362DBF02B8E93BC00CD5204 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F362DBEF2B8E93BB00CD5204 /* ChatUser.swift */; };
 		F38A6D732B8CC3C200986E7D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F38A6D722B8CC3C200986E7D /* FirebaseAuth */; };
 		F38A6D752B8CC3C200986E7D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F38A6D742B8CC3C200986E7D /* FirebaseDatabase */; };
 		F38A6D772B8CC3C200986E7D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F38A6D762B8CC3C200986E7D /* FirebaseFirestore */; };
@@ -58,6 +59,7 @@
 		F35AED212B8B74AC00B42BFF /* Chat-App-Firebase-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chat-App-Firebase-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35AED252B8B74AC00B42BFF /* Chat_App_Firebase_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_Firebase_SwiftUITests.swift; sourceTree = "<group>"; };
 		F35AED272B8B74AC00B42BFF /* Chat_App_Firebase_SwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_Firebase_SwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F362DBEF2B8E93BB00CD5204 /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		F38A6D7A2B8CC73900986E7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				F33D6FCD2B8E3CB600B1C20E /* MessagesViewModel.swift */,
+				F362DBEF2B8E93BB00CD5204 /* ChatUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F362DBF02B8E93BC00CD5204 /* ChatUser.swift in Sources */,
 				F33D6FCE2B8E3CB600B1C20E /* MessagesViewModel.swift in Sources */,
 				F33D6FC52B8DEB2D00B1C20E /* MessagesView.swift in Sources */,
 				BB70AFFD2B8D4DC50089E7F0 /* ImagePicker.swift in Sources */,
