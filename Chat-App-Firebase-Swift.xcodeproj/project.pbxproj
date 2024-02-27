@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB70AFFD2B8D4DC50089E7F0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70AFFC2B8D4DC50089E7F0 /* ImagePicker.swift */; };
+		F33D6FC52B8DEB2D00B1C20E /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D6FC42B8DEB2D00B1C20E /* MessagesView.swift */; };
 		F35AED0B2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AED0A2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift */; };
 		F35AED0D2B8B74AB00B42BFF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AED0C2B8B74AB00B42BFF /* LoginView.swift */; };
 		F35AED0F2B8B74AC00B42BFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F35AED0E2B8B74AC00B42BFF /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		BB70AFFC2B8D4DC50089E7F0 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePicker.swift; path = ../../../Downloads/LBTASwiftUIFirebaseChat/LBTASwiftUIFirebaseChat/ImagePicker.swift; sourceTree = "<group>"; };
+		F33D6FC42B8DEB2D00B1C20E /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		F35AED072B8B74AB00B42BFF /* Chat-App-Firebase-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat-App-Firebase-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F35AED0A2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_Firebase_SwiftApp.swift; sourceTree = "<group>"; };
 		F35AED0C2B8B74AB00B42BFF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F33D6FBF2B8DEAAA00B1C20E /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				F33D6FC42B8DEB2D00B1C20E /* MessagesView.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
 		F35AECFE2B8B74AA00B42BFF = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 		F35AED092B8B74AB00B42BFF /* Chat-App-Firebase-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				F33D6FBF2B8DEAAA00B1C20E /* Messages */,
 				F35AED0A2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift */,
 				F35AED0C2B8B74AB00B42BFF /* LoginView.swift */,
 				BB70AFFC2B8D4DC50089E7F0 /* ImagePicker.swift */,
@@ -281,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F33D6FC52B8DEB2D00B1C20E /* MessagesView.swift in Sources */,
 				BB70AFFD2B8D4DC50089E7F0 /* ImagePicker.swift in Sources */,
 				F35AED0D2B8B74AB00B42BFF /* LoginView.swift in Sources */,
 				F35AED0B2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift in Sources */,
