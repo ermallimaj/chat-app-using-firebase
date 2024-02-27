@@ -122,9 +122,11 @@ struct MessagesView: View {
         }
     }
     
+    @State var showNewMessageScreen = false
+    
     private var newMessageButton: some View {
         Button {
-            
+            showNewMessageScreen.toggle()
         } label: {
             HStack {
                 Spacer()
@@ -138,6 +140,11 @@ struct MessagesView: View {
                 .cornerRadius(32)
                 .padding(.horizontal)
                 .shadow(radius: 15)
+        }
+        .fullScreenCover(isPresented: $showNewMessageScreen){
+            NewMessageView { ChatUser in
+                print(ChatUser.firstname + " " + ChatUser.lastname)
+            }
         }
     }
 }
