@@ -10,7 +10,10 @@ import Foundation
 class MainMessagesViewModel: ObservableObject {
     
     @Published var errorMessage = ""
+    
     @Published var chatUser: ChatUser?
+    
+    @Published var isUserLoggedOut = false
     
     init() {
         
@@ -45,7 +48,6 @@ class MainMessagesViewModel: ObservableObject {
             self.chatUser = .init(data: data)
         }
     }
-    @Published var isUserLoggedOut = false
     
     func signOut(){
         isUserLoggedOut.toggle()

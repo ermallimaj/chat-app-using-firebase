@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BB70AFFD2B8D4DC50089E7F0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70AFFC2B8D4DC50089E7F0 /* ImagePicker.swift */; };
+		F31AA8952B8F9AE100A83F55 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AA8942B8F9AE100A83F55 /* ChatMessage.swift */; };
+		F31AA8972B8F9B6400A83F55 /* FirebaseConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AA8962B8F9B6400A83F55 /* FirebaseConstraints.swift */; };
 		F33D6FC52B8DEB2D00B1C20E /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D6FC42B8DEB2D00B1C20E /* MessagesView.swift */; };
 		F33D6FC82B8E3AA600B1C20E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F33D6FC72B8E3AA600B1C20E /* SDWebImageSwiftUI */; };
 		F33D6FCB2B8E3B5E00B1C20E /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D6FCA2B8E3B5E00B1C20E /* FirebaseManager.swift */; };
@@ -48,8 +50,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F31AA8D02B8FC2EC00A83F55 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BB70AFFC2B8D4DC50089E7F0 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePicker.swift; path = ../../../Downloads/LBTASwiftUIFirebaseChat/LBTASwiftUIFirebaseChat/ImagePicker.swift; sourceTree = "<group>"; };
+		F31AA8942B8F9AE100A83F55 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		F31AA8962B8F9B6400A83F55 /* FirebaseConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstraints.swift; sourceTree = "<group>"; };
+		F31AA8D12B8FC3AF00A83F55 /* Chat-using-Firebase 5.04.48 AM */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Chat-using-Firebase 5.04.48 AM"; path = "../Chat-using-Firebase 5.04.48 AM"; sourceTree = "<group>"; };
 		F33D6FC42B8DEB2D00B1C20E /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		F33D6FCA2B8E3B5E00B1C20E /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F33D6FCD2B8E3CB600B1C20E /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
@@ -101,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F31AA8CD2B8FC2DD00A83F55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F31AA8D12B8FC3AF00A83F55 /* Chat-using-Firebase 5.04.48 AM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F33D6FC92B8E3B3E00B1C20E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +142,8 @@
 				F362DBEF2B8E93BB00CD5204 /* ChatUser.swift */,
 				F362DBF42B8E9EA200CD5204 /* NewMessageViewModel.swift */,
 				F362DBF82B8F3EA800CD5204 /* ChatViewModel.swift */,
+				F31AA8942B8F9AE100A83F55 /* ChatMessage.swift */,
+				F31AA8962B8F9B6400A83F55 /* FirebaseConstraints.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +155,7 @@
 				F35AED1A2B8B74AC00B42BFF /* Chat-App-Firebase-SwiftTests */,
 				F35AED242B8B74AC00B42BFF /* Chat-App-Firebase-SwiftUITests */,
 				F35AED082B8B74AB00B42BFF /* Products */,
+				F31AA8CD2B8FC2DD00A83F55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +230,7 @@
 				F35AED032B8B74AB00B42BFF /* Sources */,
 				F35AED042B8B74AB00B42BFF /* Frameworks */,
 				F35AED052B8B74AB00B42BFF /* Resources */,
+				F31AA8D02B8FC2EC00A83F55 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,7 +371,9 @@
 				F33D6FC52B8DEB2D00B1C20E /* MessagesView.swift in Sources */,
 				BB70AFFD2B8D4DC50089E7F0 /* ImagePicker.swift in Sources */,
 				F33D6FCB2B8E3B5E00B1C20E /* FirebaseManager.swift in Sources */,
+				F31AA8972B8F9B6400A83F55 /* FirebaseConstraints.swift in Sources */,
 				F35AED0D2B8B74AB00B42BFF /* LoginView.swift in Sources */,
+				F31AA8952B8F9AE100A83F55 /* ChatMessage.swift in Sources */,
 				F362DBF92B8F3EA800CD5204 /* ChatViewModel.swift in Sources */,
 				F35AED0B2B8B74AB00B42BFF /* Chat_App_Firebase_SwiftApp.swift in Sources */,
 			);

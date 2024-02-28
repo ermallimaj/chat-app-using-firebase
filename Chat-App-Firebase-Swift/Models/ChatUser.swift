@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import Firebase
 
 struct ChatUser: Identifiable {
     
     var id: String { uid }
+    
     let uid, firstname, lastname, email, profileImageUrl: String
     
     init(data: [String:Any]){

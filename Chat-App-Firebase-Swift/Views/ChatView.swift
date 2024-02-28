@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
-
+import Firebase
+import FirebaseFirestore
+		
 struct ChatView: View {
     
     let chatUser: ChatUser?
@@ -23,53 +25,57 @@ struct ChatView: View {
             messages
             Text(vm.errMessage)
         }
-            ZStack {
-                
-                VStack(spacing: 0) {
-                    Spacer()
-                        .background(Color.white.ignoresSafeArea())
-                }
-            }
-        
         .navigationTitle((chatUser?.firstname ?? "") + " " + (chatUser?.lastname ?? ""))
             .navigationBarTitleDisplayMode(.inline)
 
     }
     private var messages: some View {
-        VStack{
-            if #available (iOS 15.0, *) {
-                ScrollView {
-                    ForEach(0..<20) { num in
-                        HStack {
-                            Spacer()
-                            HStack {
-                                Text("Fake text")
-                                    .foregroundColor(.white)
+            VStack {
+                if #available(iOS 15.0, *) {
+                    ScrollView {
+                        ForEach(vm.chatMessages) { message in
+                            VStack {
+                                if message.fromUid == FirebaseManager.shared.auth.currentUser?.uid {
+                                    HStack {
+                                        Spacer()
+                                        HStack {
+                                            Text(message.message)
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .background(Color.blue)
+                                        .cornerRadius(8)
+                                    }
+                                } else {
+                                    HStack {
+                                        HStack {
+                                            Text(message.message)
+                                                .foregroundColor(.black)
+                                        }
+                                        .padding()
+                                        .background(Color.white)
+                                        .cornerRadius(8)
+                                        Spacer()
+                                    }
+                                }
                             }
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(8)
-                        }
-                        .padding(.horizontal)
-                        .padding(.top, 8)
-                    }
-                    
-                    HStack{ Spacer() }
-                    .frame(height: 50)
-                }
-                .background(Color(.init(white: 0.95, alpha: 1)))
-                .safeAreaInset(edge: .bottom) {
-                    chatBar
-                        .background(Color(.systemBackground).ignoresSafeArea())
-                }
+                            .padding(.horizontal)
+                            .padding(.top, 8)
                             
-            } else {
-                
+                        }
+                        
+                        HStack{ Spacer() }
+                    }
+                    .background(Color(.init(white: 0.95, alpha: 1)))
+                    .safeAreaInset(edge: .bottom) {
+                        chatBar
+                            .background(Color(.systemBackground).ignoresSafeArea())
+                    }
+                } else {
+                    Text("Your iOS device is not supported, earliest version supported: iOS 15.0")
+                }
             }
-                
         }
-        
-    }
         
         private var chatBar: some View {
             HStack(spacing: 16) {
@@ -90,15 +96,16 @@ struct ChatView: View {
                         .foregroundColor(.white)
                 }
                 .padding(.horizontal)
-                .padding(.vertical, 8)
+                .padding(.vertical, 10)
                 .background(Color.blue)
-                .cornerRadius(4)
+                .cornerRadius(5)
             }
             .padding(.horizontal)
-            .padding(.vertical, 8)
+            .padding(.vertical, 10)
         }
-    }
-    private struct MessagePlaceholder: View {
+}
+
+private struct MessagePlaceholder: View {
         var body: some View {
             HStack {
                 Text("Write here...")
@@ -113,8 +120,6 @@ struct ChatView: View {
 
 struct ChatView_Previews1: PreviewProvider {
     static var previews: some View {
-        NavigationView{
-            ChatView(chatUser: .init(data: ["uid":"6otfDI6g4lPNlzjlboTyseOP2y92","firsNname":"Ermal", "lastName": "Limaj"]))
-        }
+        MessagesView()
     }
 }
