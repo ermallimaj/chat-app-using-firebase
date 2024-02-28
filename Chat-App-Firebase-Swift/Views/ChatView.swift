@@ -29,54 +29,80 @@ struct ChatView: View {
             .navigationBarTitleDisplayMode(.inline)
 
     }
+    
+    static let emptyScrollToString = "Empty"
+
+    
     private var messages: some View {
-            VStack {
-                if #available(iOS 15.0, *) {
-                    ScrollView {
-                        ForEach(vm.chatMessages) { message in
-                            VStack {
-                                if message.fromUid == FirebaseManager.shared.auth.currentUser?.uid {
-                                    HStack {
-                                        Spacer()
-                                        HStack {
-                                            Text(message.message)
-                                                .foregroundColor(.white)
-                                        }
-                                        .padding()
-                                        .background(Color.blue)
-                                        .cornerRadius(8)
-                                    }
-                                } else {
-                                    HStack {
-                                        HStack {
-                                            Text(message.message)
-                                                .foregroundColor(.black)
-                                        }
-                                        .padding()
-                                        .background(Color.white)
-                                        .cornerRadius(8)
-                                        Spacer()
-                                    }
-                                }
+        VStack {
+            if #available(iOS 15.0, *) {
+                ScrollView {
+                    ScrollViewReader { scrollViewProxy in
+                        VStack {
+                            ForEach(vm.chatMessages) { message in
+                                MessageView(message: message)
                             }
-                            .padding(.horizontal)
-                            .padding(.top, 8)
+                            
+                            HStack{ Spacer() }
+                            .id(Self.emptyScrollToString)
+                        }
+                        .onReceive(vm.$count) { _ in
+                            withAnimation(.easeOut(duration: 0.5)) {
+                                scrollViewProxy.scrollTo(Self.emptyScrollToString, anchor: .bottom)
+                            }
                             
                         }
                         
-                        HStack{ Spacer() }
+                        
+                        
                     }
-                    .background(Color(.init(white: 0.95, alpha: 1)))
-                    .safeAreaInset(edge: .bottom) {
-                        chatBar
-                            .background(Color(.systemBackground).ignoresSafeArea())
-                    }
-                } else {
+                    
+                }
+                .background(Color(.init(white: 0.95, alpha: 1)))
+                .safeAreaInset(edge: .bottom) {
+                    chatBar
+                        .background(Color(.systemBackground).ignoresSafeArea())
+                }
+            } else {
                     Text("Your iOS device is not supported, earliest version supported: iOS 15.0")
                 }
             }
         }
+    struct MessageView: View {
         
+        let message: ChatMessage
+        
+        var body: some View {
+            VStack {
+                if message.fromUid == FirebaseManager.shared.auth.currentUser?.uid {
+                    HStack {
+                        Spacer()
+                        HStack {
+                            Text(message.message)
+                                .foregroundColor(.white)
+                        }
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                    }
+                } else {
+                    HStack {
+                        HStack {
+                            Text(message.message)
+                                .foregroundColor(.black)
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        Spacer()
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .padding(.top, 8)
+        }
+    }
+    
         private var chatBar: some View {
             HStack(spacing: 16) {
                 Image(systemName: "photo")

@@ -15,6 +15,8 @@ class ChatViewModel: ObservableObject {
     
     @Published var errMessage = ""
     
+    @Published var count = 0
+    
     @Published var chatMessages = [ChatMessage]()
 
     let chatUser: ChatUser?
@@ -47,6 +49,9 @@ class ChatViewModel: ObservableObject {
                             self.chatMessages.append(.init(docId: change.document.documentID, data: data))
                         }
                     })
+                    DispatchQueue.main.async {
+                        self.count += 1
+                    }
                 }
         }
     
