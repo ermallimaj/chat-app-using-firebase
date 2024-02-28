@@ -34,7 +34,7 @@ To run the project locally, follow these steps:
 
 1. **Clone the repository:**
 
-   git clone https://github.com/yourusername/chat-app-firebase-swift.git
+   git clone https://github.com/ermallimaj/chat-app-using-firebase
 
 2. **Open the project in Xcode.**
 
